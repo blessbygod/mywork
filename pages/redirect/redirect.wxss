@@ -1,0 +1,8 @@
+/* redirect.wxss */
+
+.row text{
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  margin-top: 300rpx;
+}

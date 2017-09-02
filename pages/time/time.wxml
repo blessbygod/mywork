@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="col" style="padding-top: 200rpx;"> 
+  <text class="title fx-1">开启自由之旅</text>
+  <text class="title fx-1">倒计时</text>
+  <view style="margin-top: 120rpx; height: 400rpx;" class="row"> 
+    <label class="fx-1" wx:if="{{days}}"> 
+      <view class="number"> 
+        <text>{{days[1]? days[0]:''}}</text>
+        <text>{{days[1]? days[1]:days[0]}}</text> 
+      </view>
+      <view class="number-desc">DAYS</view>
+    </label> 
+    <label class="fx-1" wx:if="{{hours}}">
+      <view class="number">
+        <text>{{hours[1]? hours[0]:''}}</text>
+        <text>{{hours[1]? hours[1]:hours[0]}}</text>
+      </view>
+      <view class="number-desc">HOURS</view>
+    </label> 
+    <label class="fx-1" wx:if="{{minutes}}">
+      <view class="number">
+        <text>{{minutes[1]? minutes[0]:''}}</text>
+        <text>{{minutes[1]? minutes[1]:minutes[0]}}</text>
+      </view>
+      <view class="number-desc">MINS</view>
+    </label> 
+    <label class="fx-1" wx:if="{{seconds}}">
+      <view class="number">
+        <text>{{seconds[1]? seconds[0]:''}}</text>
+        <text>{{seconds[1]? seconds[1]:seconds[0]}}</text>
+      </view>
+      <view class="number-desc">SECS</view>
+    </label>  
+  </view>
+  <button class="agree" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">同意注册</button>  
+</view> 

@@ -1,0 +1,4 @@
+<!--redirect.wxml-->
+<view class="row">
+  <text>跳转中，请稍候...</text>
+</view>

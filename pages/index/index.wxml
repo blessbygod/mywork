@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="flex">
+  <view class="title">
+    首页
+  </view>
+  <view class="flex banners">
+    <image style="height: 360rpx" src="../../imgs/banner_1.jpg"></image>
+  </view>
+  <view bindtap="bindViewTap" class="list">
+     <picker range="{{filters.most}}" value="{{mostIndex}}">
+      <view class="picker">{{filters.most[index]}}</view>
+     </picker>
+  </view>
+  <view class="bottom-bar">
+    <view class="{{item.class}}" wx:for="{{bottomBarTexts}}" wx:key="name">
+      <image src="../../imgs/icon_{{item.class}}_normal.png"></image>
+      <text> 
+        {{item.name}}
+      </text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+<!--regist.wxml-->
+<view class="container">
+  <view class="">您是否同意我们获取您的手机信息， 方便更好为您提供服务</view> 
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">同意</button>
+</view> 

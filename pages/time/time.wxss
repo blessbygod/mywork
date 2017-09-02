@@ -1,0 +1,60 @@
+/* pages/time/time.wxss */ 
+
+.title {
+  color: #919191;
+  width: 100%;
+  text-align: center;
+  font-size: 60rpx;
+}
+.agree {
+  background: #3cadfb;
+  color: white;
+  width: 240rpx;
+} 
+label {
+  display: inline;
+  text-align: center;
+}
+.number {
+  padding-left: 20rpx;
+  position: relative;
+}
+.number text { 
+  margin-left: 10rpx;
+  display: block;
+  float: left; 
+  color: white;
+  line-height: 105rpx; 
+  height: 100rpx; 
+  width: 64rpx; 
+  font-size: 88rpx;
+  text-align: center;
+  background: url(http://yjsstatic.baidu.com/M00/00/40/CnInK1mhiCaALRreAAAgDq3KVlA21.jpeg) no-repeat;
+  background-size: cover; 
+  font-family: optima;
+}
+.number-desc {
+  position: relative;
+  top: 20rpx;
+  font-size: 24rpx;
+}
+.number text:before {
+  position: absolute;
+  height: 2rpx;   
+  background: #000;
+  content: " ";
+  z-index: 2;
+  left: 30rpx; 
+  width: 64rpx; 
+  top: 50rpx;
+}
+.number text:after {
+  position: absolute;
+  height: 2rpx;   
+  background: #000;
+  content: " ";
+  z-index: 2;
+  left: 104rpx; 
+  width: 64rpx; 
+  top: 50rpx;
+}

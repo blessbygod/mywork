@@ -1,0 +1,8 @@
+/* regist.wxss */
+label {
+  width: 100%;  
+}
+
+label input {
+  border: 1px solid #999;
+}

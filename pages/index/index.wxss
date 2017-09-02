@@ -1,0 +1,35 @@
+ .title {
+   font-size: 36rpx;
+ }
+ 
+ .banners image{
+  width: 750rpx;  
+ }
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+}
+.bottom-bar view{ 
+  width: 25%;
+  float: left;
+  height: 100rpx; 
+  text-align: center; 
+} 
+.bottom-bar image {
+  position: relative;
+  width: 48rpx;
+  top: 16rpx; 
+  height: 48rpx;
+}
+.bottom-bar view text {
+  color: #b5b5b5; 
+  font-size: 20rpx;
+  position: relative; 
+}
+.bottom-bar view text:hover {
+  color: #333; 
+}
+ 
