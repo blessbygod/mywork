@@ -1,14 +1,18 @@
 /**app.wxss**/
+ 
 html, body {
-  font-family: "Microsoft YaHei";
+  font-family: "Microsoft YaHei";  
+  background: #f1f1f1;
+}
+view, text, scroll-view {
+  box-sizing: border-box; 
 }
 
 .row, .col {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: space-between;  
-  box-sizing: border-box; 
+  justify-content: space-between;   
   align-items: center; 
 } 
 .row { 

@@ -1,17 +1,11 @@
 let constant = require('constant');
 let api = {};
 
-api.ajax = function (url, options, scb, fcb) {
-  let sessionid = resp.header.sessionid;
-  if (sessionid) {
-    wx.setStorageSync('sessionid', sessionid)
-  }
-  else {
-    sessionid = wx.getStorageSync('sessionid');
-  } 
-  url = constant.host + url;
+api.ajax = function (url, options, scb, fcb) {  
+  let  sessionid = wx.getStorageSync('sessionid'); 
+  url = constant.host + url; 
   let headers = options.headers || {};
-  headers.sessionid = sessionid; 
+  sessionid && (headers.sessionid = sessionid); 
   let method = options.method || 'GET'; 
   let data = options.data || {};
   wx.request({
@@ -19,29 +13,49 @@ api.ajax = function (url, options, scb, fcb) {
     data: data,
     header: headers,
     method: method,
-    success: cb,
+    success: function (resp) {
+      let data = resp.data
+      let success = data.success
+      if (success) {
+        typeof scb === 'function' && (scb(data.data))
+        return
+      }
+      typeof fcb === 'function' && (fcb(data.message))
+    },
     fail: fcb 
   })
 }
 
 api.get = function () {
-  let opts = arguments[1];
+  let args = Array.prototype.splice.call(arguments, 0) 
+  let opts = args[1];
+  opts || (opts = {})
   opts.method = 'GET';
-  api.ajax.apply(this, arguments);
+  args[1] = opts 
+  api.ajax.apply(this, args);
 }
 api.post = function () {
-  let opts = arguments[1];
+  let args = Array.prototype.splice.call(arguments, 0)
+  let opts = args[1];
+  opts || (opts = {})
   opts.method = 'POST';
-  api.ajax.apply(this, arguments);
+  args[1] = opts
+  api.ajax.apply(this, args);
 }
 api.patch = function () {
-  let opts = arguments[1];
+  let args = Array.prototype.splice.call(arguments, 0)
+  let opts = args[1];
+  opts || (opts = {})
   opts.method = 'PATCH';
-  api.ajax.apply(this, arguments);
+  args[1] = opts
+  api.ajax.apply(this, args);
 }
 api.delete = function () {
-  let opts = arguments[1];
+  let args = Array.prototype.splice.call(arguments, 0)
+  let opts = args[1];
+  opts || (opts = {})
   opts.method = 'DELETE';
-  api.ajax.apply(this, arguments);
+  args[1] = opts
+  api.ajax.apply(this, args);
 }
 module.exports = api;

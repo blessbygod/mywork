@@ -1,6 +1,6 @@
-//app.js
-let api = require('./js/api')
+//app.js 
 let constant = require('./js/constant')
+let api = require('./js/api')
  
 App({
   onLaunch: function () {
@@ -32,17 +32,16 @@ App({
   login: function () {
     var app = this
     wx.login({
-      success: function (resp) { 
-        console.log('login' + JSON.stringify(resp))
+      success: function (resp) {  
         app.getFDUsers(resp.code);
       }
     })
   },
   // 获取自由设计师用户信息
   getFDUsers (code) {
-    wx.request({
-      url: `https://fd.lichenfan.com/api/wechat/users/?code=${code}`,
-      success: function (resp) {
+   api.get(constant.API.WE_USERS, {
+     code: code
+   },  function (resp) {
         let sessionid = resp.header.sessionid; 
         sessionid && (wx.setStorageSync('sessionid', sessionid));
         // 如果成功，直接跳转到首页 
@@ -66,8 +65,7 @@ App({
             }, 1500)
           }
         }
-      }
-    })
+      })
   },
   getUserInfo:function(cb){
     var app = this
