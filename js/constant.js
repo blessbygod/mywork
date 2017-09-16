@@ -3,9 +3,10 @@ let constant = {};
 constant.host = 'https://fd.lichenfan.com/api/';
 constant.API = {
   WE_USERS: 'wechat/users/',
-  USERS: 'users/',
+  USERS: 'users/',  
   HOT_GALLERYS: 'hot_gallerys/',
-  LIKE_IT: 'like_it/'
+  LIKE_IT: 'like_it/',
+  GALLERY: '/gallery/'
 } 
 module.exports = constant;
 

@@ -3,8 +3,9 @@
     "pages/time/time",
     "pages/redirect/redirect",
     "pages/regist/regist",
-    "pages/index/index",
-    "pages/logs/logs" 
+    "pages/home/home",
+    "pages/my/my",
+    "pages/logs/logs"  
   ],
   "window": {
     "backgroundTextStyle": "light",

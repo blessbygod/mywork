@@ -18,21 +18,17 @@ App({
         iv: resp.iv,
         encrypted_data: resp.encryptedData
       }
-    }, function (resp) {
-      console.log(resp)
-      var data = resp.data;
-      if (data.success) {
+    }, function (resp) { 
         wx.navigateTo({
           url: "../../pages/index/index"
-        })
-      } 
+        }) 
     })  
   },
   // 微信登录
   login: function () {
     var app = this
     wx.login({
-      success: function (resp) {  
+      success: function (resp) {   
         app.getFDUsers(resp.code);
       }
     })
@@ -40,22 +36,26 @@ App({
   // 获取自由设计师用户信息
   getFDUsers (code) {
    api.get(constant.API.WE_USERS, {
-     code: code
-   },  function (resp) {
+    data: {
+      code: code
+    }
+   },  function (data, resp) {
         let sessionid = resp.header.sessionid; 
         sessionid && (wx.setStorageSync('sessionid', sessionid));
-        // 如果成功，直接跳转到首页 
-        var data = resp.data;
-        if (data.success) { 
-          wx.navigateTo({
-            url: "../../pages/index/index"
-          })
-          return;
-        } 
-        var error = data.errors[0];
-        if (error) {
+        // 如果成功，直接跳转到首页   
+          let userData = data.data
+          userData && (wx.setStorageSync('userdata', userData))
+          // APP会在初始化调用，临时调整为my
+          // wx.navigateTo({
+          //   url: "../../pages/home/home"
+          // }) 
+          // wx.navigateTo({
+          //   url: "../../pages/my/my"
+          // }) 
+   }, function (msg, error) { 
+        if (msg) {
           wx.showToast({
-            title: error.message,
+            title: message,
           });
           if (error.code === 40010) {
             setTimeout(function () {

@@ -17,10 +17,12 @@ api.ajax = function (url, options, scb, fcb) {
       let data = resp.data
       let success = data.success
       if (success) {
-        typeof scb === 'function' && (scb(data.data))
+        typeof scb === 'function' && (scb(data.data, resp))
         return
       }
-      typeof fcb === 'function' && (fcb(data.message))
+      let errors = data.errors
+      let error = errors[0]
+      typeof fcb === 'function' && (fcb(data.message, error))
     },
     fail: fcb 
   })

@@ -5,16 +5,7 @@ let api = require('../../js/api');
 let app = getApp()
 Page({
   data: { 
-    userInfo: {},
-    imgUrls: [
-      '../../imgs/banner_1.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000, 
+    userInfo: {},  
     filters: {
       most: [ '最多浏览', '最多点赞', '最多下载'],
       most_order: ['view_count', 'like_count', 'download_count']
@@ -45,13 +36,7 @@ Page({
     modalMessage: '',
     hidden: true,
     order_by: 'view_count'
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
+  }, 
   bindPickerChange: function (e) {
     let data = this.data
     let idx = parseInt(e.detail.value, 10)
@@ -91,15 +76,25 @@ Page({
       }) 
    })
   },
+  redirectPage: function (e) {
+    let page = this
+    let dataset = e.currentTarget.dataset
+    let url = dataset.page
+    wx.redirectTo({
+      url: `../${url}/${url}`
+    })
+  },
   confirm: function () { 
     this.setData({
       hidden: true 
     }) 
-  },
-  getGallerys: function () {
+  }, 
+  getGallerys: function () { 
     let page = this 
+    let userData = wx.getStorageSync('userdata')
+    let id = userData.id
     let order = page.data.order_by
-    api.get(constant.API.HOT_GALLERYS, {
+    api.get(constant.API.USERS + id + constant.API.GALLERY, {
       data: {
         order_by: order
       }

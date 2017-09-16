@@ -1,0 +1,99 @@
+ .title {
+   font-size: 36rpx; 
+   text-align: center;
+   height: 60rpx;
+ }
+ 
+ .banners {
+  width: 750rpx;   
+  height: 360rpx;
+ }
+ .banners image {
+   width: 100%;
+ }
+ .filters {
+   margin-top: 15rpx;
+   font-size: 32rpx;  
+   padding-left: 30rpx;
+ }
+ picker {
+   padding-left: 60rpx;
+   width: 30%;
+   display: inline-block; 
+ }
+ .layout {
+   float: right;
+  margin-right: 30rpx;
+ }
+ .filters image {
+   display: inline-block;
+   width: 24rpx;
+   height: 24rpx;
+ }
+.layout image {
+   width: 40rpx;
+   height: 40rpx;
+   margin-left: 10rpx;
+ }
+ .gallerys-container {
+   height: 1200rpx;
+   padding:  15rpx;
+ }
+ .gallerys-container .gallery { 
+   float: left; 
+   padding: 15rpx;  
+   overflow: hidden;
+ }
+ .gallery_normal {
+   width: 50%; 
+ }
+ .gallery_list {
+   width: 100%;
+ }
+ .gallerys-container .gallery .image {
+  width: 100%;
+ }
+ .gallery_normal .image {
+   height: 280rpx;
+ }
+ .gallery_list .image {
+   height: 320rpx;
+ }
+ .gallerys-container .gallery .name {
+   margin-top: 15rpx;
+   font-size: 32rpx;
+ }
+.gallerys-container .gallery .detail {
+   margin-top: 15rpx;
+   font-size: 28rpx;
+   color: #666;
+  } 
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+}
+.bottom-bar view{ 
+  width: 25%;
+  float: left;
+  height: 100rpx; 
+  text-align: center; 
+} 
+.bottom-bar image {
+  position: relative;
+  width: 48rpx;
+  top: 16rpx; 
+  height: 48rpx;
+}
+.bottom-bar view text {
+  color: #b5b5b5; 
+  font-size: 20rpx;
+  position: relative; 
+  left: -4rpx;
+}
+.bottom-bar view text:hover {
+  color: #333; 
+}
+ 

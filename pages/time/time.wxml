@@ -2,7 +2,7 @@
 <view class="col" style="padding-top: 200rpx;"> 
   <text class="title fx-1">开启自由之旅</text>
   <text class="title fx-1">倒计时</text>
-  <view style="margin-top: 120rpx; height: 400rpx;" class="row"> 
+  <view style="margin-top: 80rpx; height: 300rpx;" class="row"> 
     <label class="fx-1" wx:if="{{days}}"> 
       <view class="number"> 
         <text>{{days[1]? days[0]:''}}</text>
@@ -31,6 +31,11 @@
       </view>
       <view class="number-desc">SECS</view>
     </label>  
+  </view>
+  <view class="desc">
+     <!--<image class="logo" src="../../imgs/time_logo.png"></image>-->
+    <view class="min-font">Free interior Designer</view>
+    <view class="mid-font">室内设计师场景的合作交易平台</view>
   </view>
   <button class="agree" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">同意注册</button>  
 </view> 

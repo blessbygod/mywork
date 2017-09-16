@@ -65,7 +65,7 @@
  }
 .gallerys-container .gallery .detail {
    margin-top: 15rpx;
-   font-size: 28rpx;
+   font-size: 24rpx;
    color: #666;
   } 
 .bottom-bar {
@@ -91,6 +91,7 @@
   color: #b5b5b5; 
   font-size: 20rpx;
   position: relative; 
+  left: -4rpx;
 }
 .bottom-bar view text:hover {
   color: #333; 
