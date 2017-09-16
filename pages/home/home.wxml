@@ -33,7 +33,7 @@
     </view>
   </view> 
   <scroll-view class="gallerys-container" scroll-y style="width: 100%">
-      <view class="gallery gallery_{{layout}}" wx:for="{{gallerys}}" wx:key="id" bindtap='"payForGallery"' data-id="{{gallery.id}}"> 
+      <view class="gallery gallery_{{layout}}" wx:for="{{gallerys}}" wx:key="id" bindtap='payCreateOrder' data-id="{{item.id}}"> 
         <view class="image" style="background: url({{item.thumb}}) no-repeat center;background-size: cover;"></view> 
         <view class="name">{{item.name}}</view>  
         <view class="detail">

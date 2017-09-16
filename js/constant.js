@@ -6,7 +6,8 @@ constant.API = {
   USERS: 'users/',  
   HOT_GALLERYS: 'hot_gallerys/',
   LIKE_IT: 'like_it/',
-  GALLERY: '/gallery/'
+  GALLERY: '/gallery/',
+  PAY_CREATE_ORDER: 'pay/create_order/'
 } 
 module.exports = constant;
 

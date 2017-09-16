@@ -104,9 +104,16 @@ Page({
       hidden: true 
     }) 
   },
-  payForGallery(e) {
+  payCreateOrder(e) {
     let dataset = e.currentTarget.dataset
     let gid = dataset.id 
+    api.post(constant.API.PAY_CREATE_ORDER,{
+      data: {
+        goods_id: gid,
+        goods_type: 'gallery',
+        download_price: 1
+      }
+    })
   },
   getGallerys: function () {
     let page = this 
