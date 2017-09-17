@@ -104,15 +104,46 @@ Page({
       hidden: true 
     }) 
   },
-  payCreateOrder(e) {
+  checkDownloadLink(e) {
     let dataset = e.currentTarget.dataset
     let gid = dataset.id 
+
+    api.get('pay/pay_download_check/', {
+      data: {
+        goods_id: gid,
+        goods_type: 'gallery'
+      }
+    }, function (ret) {
+      api.get(ret.url, null, function () {
+
+      }, function (resp) {
+        console.log(resp)
+      })
+    })
+    return
     api.post(constant.API.PAY_CREATE_ORDER,{
       data: {
         goods_id: gid,
-        goods_type: 'gallery',
-        download_price: 1
+        goods_type: 'gallery'
       }
+    }, function (ret) {
+      let data = {}
+      data.timeStamp = String(ret.timeStamp)
+      data.paySign = ret.sign
+      data.signType = ret.signType
+      data.nonceStr = ret.nonceStr
+      data.package = ret.package
+      // 支付成功并不返回
+      // data.success = function (resp) {
+      //   console.log(resp)
+      // }
+      // data.fail = function (err) {
+      //   console.log(err)
+      // }
+      data.complete = function (res) {
+        console.log(res)
+      }
+      wx.requestPayment(data)
     })
   },
   getGallerys: function () {

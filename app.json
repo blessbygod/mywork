@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/home/home",
+    "pages/my/my",
     "pages/time/time",
     "pages/redirect/redirect",
     "pages/regist/regist",
-    "pages/home/home", 
-    "pages/my/my",
+    
     "pages/logs/logs"  
   ],
   "window": {
