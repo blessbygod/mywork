@@ -2,8 +2,7 @@
    font-size: 36rpx; 
    text-align: center;
    height: 60rpx;
- }
- 
+ } 
  .banners {
   width: 750rpx;   
   height: 360rpx;
@@ -54,7 +53,7 @@
   width: 100%;
  }
  .gallery_normal .image {
-   height: 280rpx;
+   height: 200rpx;
  }
  .gallery_list .image {
    height: 320rpx;

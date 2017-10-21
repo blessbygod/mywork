@@ -1,37 +1,25 @@
+<import src="../../components/dialog/dialog.wxml"/> 
+<template is="dialog" data="{{ ...$wux.dialog }}"/>  
 <!--index.wxml-->
-<view class="flex">
-  <modal hidden="{{hidden}}" title="自由" confirm-text="确定" cancel-text="" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
-  {{modalMessage}}
-</modal>
+<view class="flex"> 
   <view class="title">
-   个人中心
+   我的作品
   </view> 
   <view class="filters"> 
-     <picker bindchange="bindPickerChange" value="{{mostIndex}}" range="{{filters.most}}">
-      <view class="picker">
-        {{filters.most[mostIndex]}}
-        <image src="../../imgs/icon_dropdown.png"></image>
-      </view>
-    </picker> 
-    <picker bindchange="bindPickerChange" value="{{typeIndex}}" range="{{cates}}">
-      <view class="picker">
-        {{cates[typeIndex]}}
-        <image src="../../imgs/icon_dropdown.png"></image>
-      </view>
-    </picker> 
+    <text class="c2">个人作品集（{{gallerys.length}}）</text>  
     <view class="layout">
-      <image src="../../imgs/icon_filters.png" bindtap='toggleLayout' data-layout="normal"></image>
-      <image src="../../imgs/icon_filters_list.png" bindtap='toggleLayout' data-layout="list"></image> 
+      <image src="../../imgs/icon_create.png" bindtap="createGallery" data-layout="normal" data-page="upload-work">
+      </image> 
     </view>
-  </view> 
+  </view>
   <scroll-view class="gallerys-container" scroll-y style="width: 100%">
-      <view class="gallery gallery_{{layout}}" wx:for="{{gallerys}}" wx:key="id"> 
-        <view class="image" style="background: url({{item.thumb}}) no-repeat top center;background-size:contain;"></view> 
-        <view class="name">{{item.name}}</view>  
-        <view class="detail">
-            <text class="download">下载{{item.download_count || 0}}</text>
-            <text class="like" style="margin-left: 60rpx;" bindtap='likeIt' data-gallerys="{{gallerys}}" data-idx="{{index}}">点赞{{item.like_count}}</text>
-        </view>  
+    <view class="gallery gallery_{{layout}}" wx:for="{{gallerys}}" wx:key="id">
+      <view class="image cut-image" style="background: url({{item.thumb}})"></view> 
+      <view class="name c2">{{item.name}}</view>  
+      <view class="detail">
+        <text class="download c3">下载{{item.download_count || 0}}</text>
+        <text class="like c3" style="margin-left: 60rpx;" bindtap='likeIt' data-gallerys="{{gallerys}}" data-idx="{{index}}">点赞{{item.like_count}}</text>
+        </view>
       </view>  
   </scroll-view>
   <view class="bottom-bar">

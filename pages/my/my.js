@@ -2,10 +2,13 @@
 //获取应用实例
 let constant = require('../../js/constant.js');
 let api = require('../../js/api');
+let wux = require('../../components/wux')
 let app = getApp()
+let $dialog = wux.$wuxDialog
+
 Page({
-  data: { 
-    userInfo: {},  
+  data: {
+    userInfo: {},
     filters: {
       most: [ '最多浏览', '最多点赞', '最多下载'],
       most_order: ['view_count', 'like_count', 'download_count']
@@ -29,14 +32,14 @@ Page({
       {
         name: '我的',
         class: 'my'
-      } 
+      }
     ],
     gallerys: [],
     cates: [],
     modalMessage: '',
     hidden: true,
     order_by: 'view_count'
-  }, 
+  },
   bindPickerChange: function (e) {
     let data = this.data
     let idx = parseInt(e.detail.value, 10)
@@ -46,35 +49,34 @@ Page({
     })
     this.getGallerys()
   },
-  toggleLayout: function (e) {
+  createGallery: function (e) {
     let data = this.data
     let dataset = e.currentTarget.dataset
-    let layout = dataset.layout
-    this.setData({ 
-      layout: layout
+    let url = dataset.page
+    wx.redirectTo({
+      url: `../${url}/${url}`,
     })
-    this.getGallerys()
   },
-  onLoad: function () { 
+  onLoad: function () {
    this.getGallerys();
   },
   likeIt: function (e) {
     let page = this
     let dataset = e.currentTarget.dataset
     let gallerys = dataset.gallerys
-    let idx = dataset.idx 
+    let idx = dataset.idx
     let gallery = gallerys[idx]
     gallery.like_count++
-   api.post(constant.API.LIKE_IT + gallery.id + '/', null, function () {
+    api.post(constant.API.LIKE_IT + gallery.id + '/', null, function () {
      page.setData({
        gallerys: gallerys
      })
-   }, function (msg) { 
+    }, function (msg) {
       page.setData({
         hidden: false,
         modalMessage: msg
-      }) 
-   })
+      })
+    })
   },
   redirectPage: function (e) {
     let page = this
@@ -84,13 +86,13 @@ Page({
       url: `../${url}/${url}`
     })
   },
-  confirm: function () { 
+  confirm: function () {
     this.setData({
-      hidden: true 
-    }) 
-  }, 
-  getGallerys: function () { 
-    let page = this 
+      hidden: true
+    })
+  },
+  getGallerys: function () {
+    let page = this
     let userData = wx.getStorageSync('userdata')
     let id = userData.id
     let order = page.data.order_by
@@ -98,7 +100,7 @@ Page({
       data: {
         order_by: order
       }
-    }, function (ret) { 
+    }, function (ret) {
       page.setData({gallerys: ret.galleries});
       page.setData({cates: ret.cates });
     })

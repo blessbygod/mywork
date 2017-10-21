@@ -1,13 +1,14 @@
-/**app.wxss**/
- 
+/**app.wxss**/ 
+@import './components/wux.wxss';
+@import './assets/styles/weui.wxss'; 
+
 html, body {
   font-family: "Microsoft YaHei";  
   background: #f1f1f1;
 }
 view, text, scroll-view {
   box-sizing: border-box; 
-}
-
+} 
 .row, .col {
   height: 100%;
   width: 100%;
@@ -47,4 +48,18 @@ view, text, scroll-view {
 }
 .fx-9 {
   flex: 9;
+}
+
+.c1 {
+  color: #333
+}
+.c2 {
+  color: #666
+}
+.c3 {
+  color: #999
+} 
+.full-wh { 
+  height: 100%;
+  width: 100%;
 }

@@ -54,7 +54,7 @@
   width: 100%;
  }
  .gallery_normal .image {
-   height: 280rpx;
+   height: 200rpx;
  }
  .gallery_list .image {
    height: 320rpx;
@@ -64,7 +64,7 @@
    font-size: 32rpx;
  }
 .gallerys-container .gallery .detail {
-   margin-top: 15rpx;
+   margin-top: 5rpx;
    font-size: 24rpx;
    color: #666;
   } 

@@ -43,7 +43,7 @@ App({
         let sessionid = resp.header.sessionid; 
         sessionid && (wx.setStorageSync('sessionid', sessionid));
         // 如果成功，直接跳转到首页   
-          let userData = data.data
+          let userData = data  
           userData && (wx.setStorageSync('userdata', userData))
           // APP会在初始化调用，临时调整为my
           // wx.navigateTo({

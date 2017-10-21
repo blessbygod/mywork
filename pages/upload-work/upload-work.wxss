@@ -1,0 +1,73 @@
+ .main {
+   background: #f2f2f2
+ } 
+ .card {
+   background: #fff
+ }
+ .title {
+   background: #fff;
+   font-size: 36rpx; 
+   text-align: center;
+   height: 60rpx;
+ } 
+ .images {
+  background: #fff;
+  width: 750rpx;   
+  height: 360rpx;
+  text-align: center;
+  line-height: 360rpx;
+ }
+ .images image {
+   width: 100%;
+ } 
+ .filters {
+   margin-top: 15rpx;
+   font-size: 32rpx;  
+   padding-left: 30rpx;
+ }
+ picker {
+   padding-left: 60rpx;
+   width: 30%;
+   display: inline-block; 
+ }
+ .layout {
+   float: right;
+  margin-right: 30rpx;
+ }
+ .filters image {
+   display: inline-block;
+   width: 24rpx;
+   height: 24rpx;
+ }
+.layout image {
+   width: 40rpx;
+   height: 40rpx;
+   margin-left: 10rpx;
+ }
+ .images-container {
+   height: 120rpx;
+   padding:  15rpx;
+ }
+ .images-container .image { 
+   float: left; 
+   padding: 15rpx;  
+   overflow: hidden;
+ } 
+ .images-container .image {
+  width: 100%;
+ } 
+ .images-container .left {
+   max-width: 600rpx;
+   border: 1px solid blue;
+   height: 100%;
+   float: left;
+ }
+ .images-container .right image {
+   margin-left: 40rpx;
+   width: 48rpx; 
+   height: 48rpx;
+   float: left;
+ }
+ .editor {
+   border: 1px solid #f2f2f2
+ }

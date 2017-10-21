@@ -7,13 +7,13 @@
     首页
   </view>
   <swiper class="banners" indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}"  />
-    </swiper-item>
-  </block>
-</swiper>  
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}"  />
+      </swiper-item>
+    </block>
+  </swiper>  
   <view class="filters"> 
      <picker bindchange="bindPickerChange" value="{{mostIndex}}" range="{{filters.most}}">
       <view class="picker">
@@ -34,11 +34,11 @@
   </view> 
   <scroll-view class="gallerys-container" scroll-y style="width: 100%">
       <view class="gallery gallery_{{layout}}" wx:for="{{gallerys}}" wx:key="id" bindtap='checkDownloadLink' data-id="{{item.id}}"> 
-        <view class="image" style="background: url({{item.thumb}}) no-repeat center;background-size: cover;"></view> 
-        <view class="name">{{item.name}}</view>  
+        <view class="image" style="background: url({{item.thumb}}) no-repeat center; background-size: cover;"></view> 
+        <view class="name c2">{{item.name}}</view>  
         <view class="detail">
-            <text class="download">下载{{item.download_count || 0}}</text>
-            <text class="like" style="margin-left: 60rpx;" bindtap='likeIt' data-gallerys="{{gallerys}}" data-idx="{{index}}">点赞{{item.like_count}}</text>
+            <text class="download c3">下载{{item.download_count || 0}}</text>
+            <text class="like c3" style="margin-left: 60rpx;" bindtap='likeIt' data-gallerys="{{gallerys}}" data-idx="{{index}}">点赞{{item.like_count}}</text>
         </view>  
       </view>  
   </scroll-view>

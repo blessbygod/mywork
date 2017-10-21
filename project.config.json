@@ -1,0 +1,41 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true
+	},
+	"compileType": "weapp",
+	"libVersion": "1.6.0",
+	"appid": "wx19fc68fdafb509fd",
+	"projectname": "freedesigner",
+	"miniprogramRoot": "./",
+	"condition": {
+		"weapp": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "upload-work",
+					"pathName": "pages/upload-work/upload-work",
+					"query": ""
+				}
+			]
+		},
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		}
+	}
+}
