@@ -13,7 +13,7 @@
 	"miniprogramRoot": "./",
 	"condition": {
 		"weapp": {
-			"current": -1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -26,6 +26,17 @@
 					"name": "upload-work",
 					"pathName": "pages/upload-work/upload-work",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "regist",
+					"pathName": "pages/regist/regist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "redirect",
+					"pathName": "pages/redirect/redirect"
 				}
 			]
 		},
