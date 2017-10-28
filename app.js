@@ -20,7 +20,7 @@ App({
       }
     }, function (resp) { 
         wx.navigateTo({
-          url: "../../pages/index/index"
+          url: "../../pages/home/home"
         }) 
     })  
   },
@@ -46,9 +46,9 @@ App({
           let userData = data  
           userData && (wx.setStorageSync('userdata', userData))
           // APP会在初始化调用，临时调整为my
-          // wx.navigateTo({
-          //   url: "../../pages/home/home"
-          // }) 
+          wx.navigateTo({
+             url: "../../pages/home/home"
+          }) 
           // wx.navigateTo({
           //   url: "../../pages/my/my"
           // }) 
