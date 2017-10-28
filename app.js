@@ -13,15 +13,14 @@ App({
   },
   // 绑定用户手机号
   bindUserPhoneNumber (resp) { 
+    let app = this
     api.patch(constant.API.USERS, { 
       data: {
         iv: resp.iv,
         encrypted_data: resp.encryptedData
       }
     }, function (resp) { 
-        wx.navigateTo({
-          url: "../../pages/home/home"
-        }) 
+        app.getFDUsers(resp.code)
     })  
   },
   // 微信登录

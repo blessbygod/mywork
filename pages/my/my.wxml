@@ -8,13 +8,13 @@
   <view class="filters"> 
     <text class="c2">个人作品集（{{gallerys.length}}）</text>  
     <view class="layout">
-      <image src="../../imgs/icon_create.png" bindtap="createGallery" data-layout="normal" data-page="upload-work">
+      <image src="../../imgs/icon_create.png" bindtap="createGallery" data-page="upload-work">
       </image> 
     </view>
   </view>
   <scroll-view class="gallerys-container" scroll-y style="width: 100%">
     <view class="gallery gallery_{{layout}}" wx:for="{{gallerys}}" wx:key="id">
-      <view class="image cut-image" style="background: url({{item.thumb}})"></view> 
+      <view class="image cut-image" style="background: url({{item.thumb}})" bindlongtap="createGallery" data-page="upload-work" data-gid="{{item.id}}"></view> 
       <view class="name c2">{{item.name}}</view>  
       <view class="detail">
         <text class="download c3">下载{{item.download_count || 0}}</text>
