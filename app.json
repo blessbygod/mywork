@@ -6,7 +6,9 @@
     "pages/redirect/redirect",
     "pages/regist/regist",
     "pages/logs/logs",
-    "pages/upload-work/upload-work"
+    "pages/upload-work/upload-work",
+    "pages/send/send",
+    "pages/new-order/new-order"
   ],
   "window": {
     "backgroundTextStyle": "light",

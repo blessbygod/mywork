@@ -19,6 +19,8 @@ import $wuxSeats from 'seats/seats'
 import $wuxToast from 'toast/toast'
 import $wuxToptips from 'toptips/toptips'
 import $wuxXnumber from 'xnumber/xnumber'
+// luning04
+import $wuxBottomBar from 'bottom-bar/bottom-bar'
 
 export {
 	$wuxActionSheet, 
@@ -42,4 +44,5 @@ export {
 	$wuxToast, 
 	$wuxToptips, 
 	$wuxXnumber, 
+  $wuxBottomBar
 }

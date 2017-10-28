@@ -92,6 +92,7 @@
   font-size: 20rpx;
   position: relative; 
   left: -4rpx;
+  top:-20rpx;
 }
 .bottom-bar view text:hover {
   color: #333; 

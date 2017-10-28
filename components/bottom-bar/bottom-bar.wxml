@@ -1,0 +1,10 @@
+<template name="bottom-bar">
+	<view class="bottom-bar">
+    <view wx:for="{{bottomBarTexts}}" class="{{item.class}}" wx:key="name" bindtap="{{redirectPage}}" data-page="{{item.url}}"> 
+      <image src="{{item.imgURL}}"></image>
+      <text> 
+        {{item.name}}
+      </text>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,72 @@
+@import '../../css/core.wxss';
+.title {
+  font-size: 36rpx; 
+  text-align: center;
+  height: 60rpx;
+ }
+
+.new-order {
+  background-color: #eee;
+  min-height: 1200rpx;
+}
+.new-order .new-order-base-info {
+  background-color: #fff;
+  width: 100%;
+  border-top: 1px #eee solid;
+  padding: 0 20rpx 0 20rpx;
+}
+
+.new-order .new-order-title {
+  font-size: 36rpx; 
+  text-align: left;
+  padding: 20rpx 0 0 0;
+}
+
+.new-order .new-order-desc {
+  border-bottom: #eee 1px solid;
+  color: #999;
+  text-align: left;
+  font-size: 30rpx;
+  line-height:80rpx;
+}
+
+.new-order .new-order-desc input {
+  width:75%;
+  padding-top:15rpx;
+  padding-left:20rpx;
+  font-size: 30rpx;
+}
+
+.new-order .new-order-price-setting {
+  background-color: #fff;
+  width: 100%;
+  padding: 0 20rpx 0 20rpx;
+}
+
+.new-order .new-order-tips {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.new-order .new-order-upload {
+  background-color: #eee;
+  height: 150rpx;
+  width: 300rpx;
+  margin-right: 10rpx;
+}
+
+.new-order .new-order-upload-wrap {
+  height:160rpx;
+  width:100%;
+  display: flex;
+  display: -webkit-box; 
+  flex-direction: column;
+}
+.new-order .new-order-delete {
+  z-index:99;
+  width:50rpx;
+  height:50rpx;
+  position:relative;
+  top:-175rpx;
+  right:-275rpx;
+}
