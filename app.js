@@ -38,7 +38,8 @@ App({
     data: {
       code: code
     }
-   },  function (data, resp) {
+   },  
+   function (data, resp) {
         let sessionid = resp.header.sessionid; 
         sessionid && (wx.setStorageSync('sessionid', sessionid));
         // 如果成功，直接跳转到首页   
@@ -48,9 +49,6 @@ App({
           wx.navigateTo({
              url: "../../pages/home/home"
           }) 
-          // wx.navigateTo({
-          //   url: "../../pages/my/my"
-          // }) 
    }, function (msg, error) { 
         if (msg) {
           wx.showToast({
