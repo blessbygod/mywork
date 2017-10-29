@@ -10,5 +10,6 @@ constant.API = {
   PAY_CREATE_ORDER: 'pay/create_order/',
   UPLOAD_FILE: 'upload_file/'
 }
+
 module.exports = constant;
 

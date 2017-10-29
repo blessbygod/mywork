@@ -12,11 +12,14 @@ Page({
     interval: 5000,
     duration: 1000,
     showname: false,
-    showsummary: false,
+    showdesc: false,
     showconcept: false,
-    name: '',
-    summary: '',
-    concept: ''
+    name: 'my name',
+    desc: 'my desc',
+    concept: 'my concept',
+    download_prcice: 0,
+    concept_price: 0,
+    total_price: 0
   },
 
   /**
@@ -115,7 +118,7 @@ Page({
           success: function(res){
             let data = JSON.parse(res.data)
             //do something
-            let image = data.data 
+            let image = data.data
             let imgUrls = page.data.imgUrls
             imgUrls.push({
               image: image,
