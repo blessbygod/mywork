@@ -12,7 +12,7 @@ App({
     app.login();
   },
   // 绑定用户手机号
-  bindUserPhoneNumber (resp) { 
+  bindUserPhoneNumber (resp) {
     let app = this
     api.patch(constant.API.USERS, { 
       data: {

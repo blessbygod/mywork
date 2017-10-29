@@ -13,7 +13,7 @@
 	"miniprogramRoot": "./",
 	"condition": {
 		"weapp": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -37,6 +37,18 @@
 					"id": -1,
 					"name": "redirect",
 					"pathName": "pages/redirect/redirect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "send",
+					"pathName": "pages/send/send",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "send",
+					"pathName": "pages/order-detail/order-detail",
 					"query": ""
 				}
 			]

@@ -1,0 +1,108 @@
+<!--pages/order-detail/order-detail.wxml-->
+<view class="title">订单详情</view>
+<scroll-view scroll-y style="width: 100%" class="order-detail">
+  <view class="order-card">
+    <view class="order-card-title">远洋山水俱乐部</view>
+    <view class="order-card-desc">KTV娱乐场所内工程-平面规划设计师</view>
+    <view class="order-card-desc clearfix">
+      <view class="clearfix">
+        <view style="float: left; margin-right: 16rpx;">交稿日：2017-10-16</view>
+        <view style="margin-right: 16rpx;float: left">设计稿：3000张</view>
+        <view class="fl">共计：600000㎡</view>
+      </view>
+      <view>欧式风格 需面对面沟通</view>
+    </view>
+    <view class="order-card-design-product">
+      <view class="order-card-desc">设计作品参考</view>
+      <scroll-view  scroll-x class="clearfix">
+        <view scroll-x class="order-card-upload-wrap" style="margin-top:20rpx">
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="order-card-price-tips" style="padding:15rpx 0rpx 20rpx 0rpx">
+      <view>
+        <text class="order-card-price">￥20350</text>
+        <text class="order-card-tips">（系统报价￥200000，小费￥350）</text>
+      </view>
+      <view style="line-height:25rpx;">
+        <text class="order-card-tips">接单时间：2017-10-18 19:00</text>
+      </view>
+    </view>
+  </view>
+  <view class="designer-info clearfix">
+    <view>接单人信息</view>
+    <image src="../../imgs/photo.png" class="designer-info-photo fl"></image>
+    <view class="designer-info-desc fl clearfix">
+      <view>Joshin 自由设计师</view>
+      <view class="order-card-tips">精通主案/风水/电路</view>
+    </view>
+    <view class="clearfix">
+      <image src="../../imgs/phone.png" class="designer-info-phone fr" bindtap="makeCall"></image>
+      <image src="../../imgs/massage.png" class="designer-info-phone fr" bindtap="makeCall"></image>
+    </view>
+    <view class="designer-info-desc">我们将充满青春气息装饰融入到复试公寓中，文中将具体说明如何将这种气息融入...</view>
+    <scroll-view  scroll-x class="clearfix">
+        <view scroll-x class="order-card-upload-wrap" style="margin-top:20rpx">
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+        </view>
+      </scroll-view>
+  </view>
+  <view class="designer-info clearfix">
+    <view>初稿</view>
+    <view class="order-card-tips">共30张/上传时间 2017.10.28 17:00</view>
+    <scroll-view  scroll-x class="clearfix">
+        <view scroll-x class="order-card-upload-wrap" style="margin-top:20rpx">
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+        </view>
+      </scroll-view>
+      <view class="clearfix" style="padding-top: 20rpx">
+          <view class="order-card-button fl">设计确认</view>
+          <view class="order-card-button fr">发起改稿</view>
+        </view>
+  </view>
+  <view class="designer-info clearfix">
+    <view>追加改稿</view>
+    <view class="order-card-tips">共30张/上传时间 2017.10.28 17:00</view>
+    <scroll-view  scroll-x class="clearfix">
+        <view scroll-x class="order-card-upload-wrap" style="margin-top:20rpx">
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+          <view class="order-card-upload">
+            <image src="../../imgs/add.png" class="order-card-upload"></image>
+          </view>
+        </view>
+      </scroll-view>
+      <view style="padding-top: 20rpx">
+        <view class="order-card-button-sure">设计确认</view>
+      </view>
+  </view>
+</scroll-view>

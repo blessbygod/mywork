@@ -52,10 +52,16 @@ Page({
       url
     })
   },
+  orderDetail: function (e) {
+    wx.redirectTo({
+      url: '/pages/order-detail/order-detail'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 未确认
     api.get(constant.API.SEND_UNSURE, null
       , function (ret) {
         // api.get(ret.url, null, function () {
@@ -63,6 +69,17 @@ Page({
         // }, function (resp) {
         //   console.log(resp)
         // })
+        console.log(ret)
+    })
+    // 已确认
+    api.get(constant.API.SEND_ENSURE, null
+      , function (ret) {
+        // api.get(ret.url, null, function () {
+
+        // }, function (resp) {
+        //   console.log(resp)
+        // })
+        console.log('ensure')
         console.log(ret)
       })
     $bottomBar.show(

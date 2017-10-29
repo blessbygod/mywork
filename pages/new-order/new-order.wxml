@@ -91,5 +91,8 @@
     </scroll-view>
     <view class="new-order-tips">请上传JPG格式图片，大小控制在200K以内</view>
   </view>
+  <view class="new-order-finish" style="margin-top: 20rpx">
+    <view class="new-order-finish-btn">完成</view>
+  </view>
 </scroll-view>
 <template is="calendar" data="{{ ...$wux.calendar.finishTime }}"/>

@@ -15,7 +15,7 @@
   </view>
   <scroll-view class="send-detail" scroll-y style="width: 100%">
     <view wx:if="{{isUnsure === 'active'}}">
-      <view class="send-card">
+      <view class="send-card" bindtap='orderDetail'>
         <view class="title">远洋山水俱乐部</view>
         <view class="send-card-desc">KTV娱乐场所内工程-平面规划设计师</view>
         <view class="send-card-desc clearfix">

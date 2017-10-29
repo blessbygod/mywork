@@ -70,3 +70,20 @@
   top:-175rpx;
   right:-275rpx;
 }
+
+.new-order .new-order-finish {
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.new-order .new-order-finish-btn {
+  color: #999;
+  border: solid 1px #aaa;
+  font-size: 30rpx;
+  font-weight: 300;
+  width: 350rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  padding: 5px 0.5px;
+  margin:0 auto;
+}

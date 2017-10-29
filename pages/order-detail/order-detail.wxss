@@ -1,0 +1,124 @@
+/* pages/order-detail/order-detail.wxss */
+@import '../../css/core.wxss';
+ .title {
+   font-size: 36rpx; 
+   text-align: center;
+   height: 60rpx;
+ }
+.order-detail {
+  background: #eee;
+  min-height: 1100rpx;
+  padding-bottom: 100rpx;
+}
+
+.order-card {
+  border-top: 1rpx #eee solid;
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  text-align: left;
+  margin-bottom: 20rpx;
+  line-height:48rpx;
+}
+.order-card .order-card-title {
+  font-size: 36rpx;
+  text-align: left;
+}
+
+.order-card .order-card-price-tips {
+  line-height: 48rpx;
+}
+.order-card .order-card-price {
+  font-size: 36rpx;
+  color: #f5535b;
+  font-weight: 300;
+}
+
+.order-card .order-card-desc {
+  font-size:30rpx;
+  color:#999;
+  font-weight: 300;
+}
+
+.order-card .order-card-design-product {
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+  padding: 20rpx 0rpx;
+}
+
+.order-card-upload {
+  background-color: #eee;
+  height: 150rpx;
+  width: 300rpx;
+  margin-right: 10rpx;
+}
+
+.order-card-upload-wrap {
+  height:160rpx;
+  width:100%;
+  display: flex;
+  display: -webkit-box; 
+  flex-direction: column;
+}
+
+
+.order-card .order-card-btn {
+  width: 30%
+}
+
+.order-card .order-card-tips {
+  font-size: 25rpx;
+  color: #aaa;
+  font-weight: 300;
+}
+
+.order-detail .order-card-button {
+  color: #999;
+  border: solid 1px #aaa;
+  font-size: 30rpx;
+  font-weight: 300;
+  width: 350rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  padding: 5px 0.5px;
+}
+
+.order-detail .order-card-button-sure {
+  width: 100%;
+  color: #999;
+  border: solid 1px #aaa;
+  font-size: 30rpx;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 10rpx;
+  padding: 5px 0.5px;
+}
+.order-detail .designer-info {
+  border-top: #eee solid 1px;
+  padding: 20rpx;
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+
+.order-detail .designer-info .designer-info-photo {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.order-detail .designer-info .designer-info-phone {
+  margin-top: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.order-detail .designer-info .designer-info-desc {
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  color: #999;
+  font-weight: 300;
+}
+
+.order-detail .designer-info .order-card-tips {
+  font-size: 25rpx;
+  color: #aaa;
+  font-weight: 300;
+}
