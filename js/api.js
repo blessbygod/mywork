@@ -22,7 +22,7 @@ api.ajax = function (url, options, scb, fcb) {
       }
       let errors = data.errors
       let error = errors[0]
-      typeof fcb === 'function' && (fcb(data.message, error))
+      typeof fcb === 'function' && (fcb(data.message, error, resp))
     },
     fail: fcb
   })

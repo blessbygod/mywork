@@ -19,7 +19,7 @@ Page({
     concept: '',
     download_price: 0,
     concept_price: 0,
-    total_price: 0
+    gallery_price: 0
   },
 
   /**
@@ -82,13 +82,13 @@ Page({
     let page = this
     api.post(constant.API.GALLERY, {
       data: {
-        name: 'test相册001',
-        desc: '我的设计概述是balala',
+        name: page.name,
+        desc: page.desc,
         images: page.data.imgUrls,
-        concept: '我的设计理念是balala',
-        download_price: 300,
-        concept_price: 200,
-        gallery_price: 100,
+        concept: page.concept,
+        download_price: parseInt(page.download_price),
+        concept_price: parseInt(page.concept_price),
+        gallery_price: parseInt(page.gallery_price),
         scate: '工装'
       }
     }, function (resp) {

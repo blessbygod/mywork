@@ -48,26 +48,26 @@ App({
       let userData = data  
       userData && (wx.setStorageSync('userdata', userData))
       // APP会在初始化调用，临时调整为my
-          
+      return
       wx.navigateTo({
         url: "../../pages/home/home"
       }) 
-   }, function (msg, error) { 
-     let sessionid = resp.header.sessionid;
-     sessionid && (wx.setStorageSync('sessionid', sessionid));
-        if (msg) {
-          wx.showToast({
-            title: msg,
-          });
-          if (error.code === 40010) {
-            setTimeout(function () {
-              wx.navigateTo({
-                url: "../../pages/regist/regist"
-              })
-            }, 1500)
-          }
-        }
-      })
+   }, function (msg, error, resp) { 
+    let sessionid = resp.header.sessionid;
+    sessionid && (wx.setStorageSync('sessionid', sessionid));
+    if (msg) {
+      wx.showToast({
+        title: msg,
+      });
+      if (error.code === 40010) {
+        setTimeout(function () {
+          wx.navigateTo({
+            url: "../../pages/regist/regist"
+          })
+        }, 1500)
+      }
+    }
+  })
   },
   getUserInfo:function(cb){
     var app = this

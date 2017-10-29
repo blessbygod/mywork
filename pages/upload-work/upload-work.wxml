@@ -58,7 +58,7 @@
          </view>
          <view>
            <label>整套方案价格</label>
-           <input value="{{total_price}}" placeholder="设置整套方案价格" />
+           <text>{{download_price}}</text>
          </view>
       </view>
     </view>
