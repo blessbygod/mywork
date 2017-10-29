@@ -1,26 +1,26 @@
 <!--index.wxml-->
-<view class="main flex"> 
+<view class="main flex">
   <view class="title">
    作品上传
-  </view> 
+  </view>
   <swiper class="images" indicator-dots="{{indicatorDots}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:if="{{imgUrls.length}}" >
       <swiper-item wx:for="{{imgUrls}}" wx:key="ori">
         <view style="background: url({{item.image.ori}})  no-repeat center; background-size: cover;" class="full-wh" />
       </swiper-item>
-    </block> 
-    <block wx:else>
-      <view class="middle">请为本作品集上传作品</view> 
     </block>
-  </swiper> 
+    <block wx:else>
+      <view class="middle">请为本作品集上传作品</view>
+    </block>
+  </swiper>
   <scroll-view class="images-container" scroll-x style="width: 100%">
-      <view class="left" wx:key="id"> 
+      <view class="left" wx:key="id">
         <view wx:for="{{imgUrls}}" wx:key="ori">
           <view style="background: url({{item.image['200x150']}}) no-repeat center; background-size: cover; width: 48rpx; height: 48rpx">
-          </view>  
+          </view>
         </view>
-      </view>  
+      </view>
       <view class="right">
          <image src="../../imgs/icon_create.png" bindtap="uploadImage" />
       </view>
@@ -28,20 +28,20 @@
   <view class="gallery-form card">
     <view class="name">
       相册名称
-      <view class="editor"> 
-        <textarea wx:if="showname"></textarea>
+      <view class="editor">
+        <textarea wx:if="showname" value="{{name}}"></textarea>
       </view>
     </view>
     <view class="summary">
       设计概述
-      <view class="editor"> 
-        <textarea wx:if="showsummary"></textarea>
+      <view class="editor">
+        <textarea wx:if="showdesc" value="{{desc}}"></textarea>
       </view>
     </view>
     <view class="concept">
       设计理念
       <view class="editor">
-        <textarea wx:if="showconcept"></textarea>
+        <textarea wx:if="showconcept" value="{{concept}}"></textarea>
       </view>
     </view>
     <view class="concept">
@@ -49,13 +49,16 @@
       <view class="price">
          <view>
            <label>图片下载价格</label>
+           <input value="{{download_price}}" />
          </view>
          <view>
            <label>设计理念价格</label>
+           <input value="{{concept_price}}" />
          </view>
          <view>
            <label>整套方案价格</label>
-         </view> 
+           <input value="{{total_price}}" />
+         </view>
       </view>
     </view>
   </view>

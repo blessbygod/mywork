@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/redirect/redirect",
     "pages/home/home",
     "pages/my/my",
     "pages/time/time",
-    "pages/redirect/redirect",
+    
     "pages/regist/regist",
     "pages/logs/logs",
     "pages/upload-work/upload-work",

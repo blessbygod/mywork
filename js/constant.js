@@ -40,5 +40,6 @@ constant.COMPONENTS = {
     }
   ]
 }
+
 module.exports = constant;
 

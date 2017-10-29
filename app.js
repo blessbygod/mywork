@@ -13,15 +13,14 @@ App({
   },
   // 绑定用户手机号
   bindUserPhoneNumber (resp) { 
+    let app = this
     api.patch(constant.API.USERS, { 
       data: {
         iv: resp.iv,
         encrypted_data: resp.encryptedData
       }
     }, function (resp) { 
-        wx.navigateTo({
-          url: "../../pages/index/index"
-        }) 
+        app.getFDUsers(resp.code)
     })  
   },
   // 微信登录
@@ -46,9 +45,9 @@ App({
           let userData = data  
           userData && (wx.setStorageSync('userdata', userData))
           // APP会在初始化调用，临时调整为my
-          // wx.navigateTo({
-          //   url: "../../pages/home/home"
-          // }) 
+          wx.navigateTo({
+             url: "../../pages/home/home"
+          }) 
           // wx.navigateTo({
           //   url: "../../pages/my/my"
           // }) 

@@ -36,8 +36,10 @@ Page({
     let data = this.data
     let dataset = e.currentTarget.dataset
     let url = dataset.page
+    let gid = dataset.gid
+    
     wx.redirectTo({
-      url: `../${url}/${url}`,
+      url: `../${url}/${url}?gid=${gid}`,
     })
   },
   onLoad: function () {

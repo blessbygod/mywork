@@ -36,7 +36,12 @@
 				{
 					"id": -1,
 					"name": "redirect",
+<<<<<<< HEAD
 					"pathName": "pages/redirect/redirect"
+=======
+					"pathName": "pages/redirect/redirect",
+					"query": ""
+>>>>>>> master
 				}
 			]
 		},

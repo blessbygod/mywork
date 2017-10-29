@@ -1,12 +1,12 @@
 let constant = require('constant');
 let api = {};
 
-api.ajax = function (url, options, scb, fcb) {  
-  let  sessionid = wx.getStorageSync('sessionid'); 
-  url = constant.host + url; 
+api.ajax = function (url, options, scb, fcb) {
+  let  sessionid = wx.getStorageSync('sessionid');
+  url = constant.host + url;
   let headers = options.headers || {};
-  sessionid && (headers.sessionid = sessionid); 
-  let method = options.method || 'GET'; 
+  sessionid && (headers.sessionid = sessionid);
+  let method = options.method || 'GET';
   let data = options.data || {};
   wx.request({
     url: url,
@@ -24,16 +24,16 @@ api.ajax = function (url, options, scb, fcb) {
       let error = errors[0]
       typeof fcb === 'function' && (fcb(data.message, error))
     },
-    fail: fcb 
+    fail: fcb
   })
 }
 
 api.get = function () {
-  let args = Array.prototype.splice.call(arguments, 0) 
+  let args = Array.prototype.splice.call(arguments, 0)
   let opts = args[1];
   opts || (opts = {})
   opts.method = 'GET';
-  args[1] = opts 
+  args[1] = opts
   api.ajax.apply(this, args);
 }
 api.post = function () {
