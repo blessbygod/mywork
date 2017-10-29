@@ -7,8 +7,9 @@
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:if="{{imgUrls.length}}" >
       <swiper-item wx:for="{{imgUrls}}" wx:key="ori">
-        <view style="background: url({{item.image.ori}})  no-repeat center; background-size: cover;" class="full-wh" />
-      </swiper-item>
+        <view style="background: url({{item.image.ori}})  no-repeat center; background-size: cover;" class="full-wh">
+        </view>
+        </swiper-item>
     </block>
     <block wx:else>
       <view class="middle">请为本作品集上传作品</view>
@@ -29,19 +30,19 @@
     <view class="name">
       相册名称
       <view class="editor">
-        <textarea wx:if="showname" value="{{name}}"></textarea>
+        <textarea wx:if="showname" value="{{name}}" placeholder="填写相册名称"></textarea>
       </view>
     </view>
     <view class="summary">
       设计概述
       <view class="editor">
-        <textarea wx:if="showdesc" value="{{desc}}"></textarea>
+        <textarea wx:if="showdesc" value="{{desc}}" placeholder="填写设计概述"></textarea>
       </view>
     </view>
     <view class="concept">
       设计理念
       <view class="editor">
-        <textarea wx:if="showconcept" value="{{concept}}"></textarea>
+        <textarea wx:if="showconcept" value="{{concept}}" placeholder="填写设计理念"></textarea>
       </view>
     </view>
     <view class="concept">
@@ -49,15 +50,15 @@
       <view class="price">
          <view>
            <label>图片下载价格</label>
-           <input value="{{download_price}}" />
+           <input value="{{download_price}}" placeholder="设置下载价格" />
          </view>
          <view>
            <label>设计理念价格</label>
-           <input value="{{concept_price}}" />
+           <input value="{{concept_price}}" placeholder="设置理念价格" />
          </view>
          <view>
            <label>整套方案价格</label>
-           <input value="{{total_price}}" />
+           <input value="{{total_price}}" placeholder="设置整套方案价格" />
          </view>
       </view>
     </view>

@@ -71,3 +71,15 @@
  .editor {
    border: 1px solid #f2f2f2
  }
+ .gallery-form >view {
+  color: #666;
+  margin-left: 20rpx;
+ }
+
+ .gallery-form >view .editor {
+  color: #666;
+  margin: 40rpx;
+  border: 1px solid #666;
+  padding: 10rpx;
+  font-size: 36rpx;
+ }

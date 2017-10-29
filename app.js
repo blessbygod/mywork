@@ -19,8 +19,10 @@ App({
         iv: resp.iv,
         encrypted_data: resp.encryptedData
       }
-    }, function (resp) { 
-        app.getFDUsers(resp.code)
+    }, function (resp) {
+      wx.navigateTo({
+        url: "../../pages/home/home"
+      }) 
     })  
   },
   // 微信登录
@@ -40,19 +42,22 @@ App({
     }
    },  
    function (data, resp) {
-        let sessionid = resp.header.sessionid; 
-        sessionid && (wx.setStorageSync('sessionid', sessionid));
-        // 如果成功，直接跳转到首页   
-          let userData = data  
-          userData && (wx.setStorageSync('userdata', userData))
-          // APP会在初始化调用，临时调整为my
-          wx.navigateTo({
-             url: "../../pages/home/home"
-          }) 
+      let sessionid = resp.header.sessionid; 
+      sessionid && (wx.setStorageSync('sessionid', sessionid));
+      // 如果成功，直接跳转到首页   
+      let userData = data  
+      userData && (wx.setStorageSync('userdata', userData))
+      // APP会在初始化调用，临时调整为my
+          
+      wx.navigateTo({
+        url: "../../pages/home/home"
+      }) 
    }, function (msg, error) { 
+     let sessionid = resp.header.sessionid;
+     sessionid && (wx.setStorageSync('sessionid', sessionid));
         if (msg) {
           wx.showToast({
-            title: message,
+            title: msg,
           });
           if (error.code === 40010) {
             setTimeout(function () {
