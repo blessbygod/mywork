@@ -21,7 +21,7 @@ Page({
     cates: [],
     modalMessage: '',
     hidden: true,
-    order_by: 'view_count'
+    order_by: 'created_on'
   },
   bindPickerChange: function (e) {
     let data = this.data
@@ -38,8 +38,10 @@ Page({
     let url = dataset.page
     let gid = dataset.gid
     
+    let ipage = dataset.ipage
+
     wx.redirectTo({
-      url: `../${url}/${url}?gid=${gid}`,
+      url: `../${url}/${url}?gid=${gid}&ipage=${ipage}`,
     })
   },
   onLoad: function () {

@@ -1,6 +1,7 @@
 // pages/upload-gallery/upload-gallery.js
 let constant = require('../../js/constant.js')
 let api = require('../../js/api.js')
+
 Page({
   /**
    * 页面的初始数据
@@ -14,19 +15,43 @@ Page({
     showname: false,
     showdesc: false,
     showconcept: false,
-    name: '',
-    desc: '',
-    concept: '',
-    download_price: 0,
-    concept_price: 0,
-    gallery_price: 0
+    name: '11',
+    desc: '22',
+    concept: '33',
+    download_price: 10,
+    concept_price: 20,
+    gallery_price: 30
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let gid = options.gid
+    let ipage = options.ipage
+    this.setData({
+      ipage: ipage,
+      gid: gid
+    })
+    if (gid !== 'undefined' && ipage !== 'undefined') {
+      let url = constant.API.HOT_GALLERYS
+      if (ipage === 'my') {
+        url = constant.API.GALLERY
+      }
+      let gURL = `${url}${gid}/`
+      console.log(gURL)
+      // 加载imgURLs
+      var page = this
+      api.get(gURL, function (resp) {
+        page.data.name = resp.name
+        page.data.desc = resp.desc
+        page.data.imgUrls = resp.images
+        page.data.concept = resp.concept
+        page.data.download_price = resp.download_price
+        page.data.concept_price = resp.concept_price
+        page.data.gallery_price = resp.gallery_price
+      })
+    }
   },
 
   /**
@@ -78,21 +103,30 @@ Page({
 
   },
   // submit
-  patchGallery: function () {
+  patchGallery: function (e) {
     let page = this
+    let data = this.data
+    let dataset = e.currentTarget.dataset
+    let ipage = dataset.ipage
     api.post(constant.API.GALLERY, {
       data: {
-        name: page.name,
-        desc: page.desc,
+        name: page.data.name,
+        desc: page.data.desc,
         images: page.data.imgUrls,
-        concept: page.concept,
-        download_price: parseInt(page.download_price),
-        concept_price: parseInt(page.concept_price),
-        gallery_price: parseInt(page.gallery_price),
-        scate: '工装'
+        concept: page.data.concept,
+        download_price: parseInt(page.data.download_price),
+        concept_price: parseInt(page.data.concept_price),
+        gallery_price: parseInt(page.data.gallery_price),
+        scate: '主案设计'
       }
     }, function (resp) {
-      console.log(resp)
+      let ipage = page.data.ipage
+      if (ipage === 'undefined') {
+        ipage = 'my'
+      }
+      wx.redirectTo({
+        url: `../../pages/${ipage}/${ipage}`,
+      })
     }, function (err) {
       console.log(err)
     })

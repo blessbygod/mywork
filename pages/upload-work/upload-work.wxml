@@ -58,10 +58,10 @@
          </view>
          <view>
            <label>整套方案价格</label>
-           <text>{{download_price}}</text>
+           <input value="{{gallery_price}}" placeholder="设置整套方案价格" />
          </view>
       </view>
     </view>
   </view>
-  <button bindtap="patchGallery">确认提交</button>
+  <button bindtap="patchGallery" data-ipage="{{ipage}}">确认提交</button>
 </view>

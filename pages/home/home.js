@@ -52,6 +52,17 @@ Page({
       url: '../logs/logs'
     })
   },
+  createGallery: function (e) {
+    let data = this.data
+    let dataset = e.currentTarget.dataset
+    let url = dataset.page
+    let gid = dataset.gid
+    let ipage = dataset.ipage
+
+    wx.redirectTo({
+      url: `../${url}/${url}?gid=${gid}&ipage=${ipage}`,
+    })
+  },
   bindPickerChange: function (e) {
     let data = this.data
     let idx = parseInt(e.detail.value, 10)

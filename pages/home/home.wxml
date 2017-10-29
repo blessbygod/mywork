@@ -34,7 +34,7 @@
   </view> 
   <scroll-view class="gallerys-container" scroll-y style="width: 100%">
       <view class="gallery gallery_{{layout}}" wx:for="{{gallerys}}" wx:key="id" bindtap='checkDownloadLink' data-id="{{item.id}}"> 
-        <view class="image" style="background: url({{item.thumb}}) no-repeat center; background-size: cover;"></view> 
+        <view class="image" style="background: url({{item.thumb}}) no-repeat center; background-size: cover;" bindtag="createGallery" data-page="upload-work" data-id="{{item.id}}" data-ipage="home"></view> 
         <view class="name c2">{{item.name}}</view>  
         <view class="detail">
             <text class="download c3">下载{{item.download_count || 0}}</text>
