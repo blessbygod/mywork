@@ -1,0 +1,19 @@
+/* clearfix 需要提取为公共部分*/
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+.clear {
+    clear: both;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}

@@ -5,6 +5,7 @@ let api = require('../../js/api');
 let wux = require('../../components/wux')
 let app = getApp()
 let $dialog = wux.$wuxDialog
+let $bottomBar = wux.$wuxBottomBar
 
 Page({
   data: {
@@ -16,24 +17,6 @@ Page({
     mostIndex: 0,
     typeIndex: 0,
     layout: 'normal',
-    bottomBarTexts: [
-      {
-        name: '首页',
-        class: 'home'
-      },
-      {
-        name: '发单',
-        class: 'send'
-      },
-      {
-        name: '接单',
-        class: 'apply'
-      },
-      {
-        name: '我的',
-        class: 'my'
-      }
-    ],
     gallerys: [],
     cates: [],
     modalMessage: '',
@@ -61,6 +44,11 @@ Page({
   },
   onLoad: function () {
    this.getGallerys();
+   $bottomBar.show(
+     {
+       bottomBarTexts: constant.COMPONENTS.BOTTOM_BAR
+     }
+   );
   },
   likeIt: function (e) {
     let page = this

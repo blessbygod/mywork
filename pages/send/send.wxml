@@ -1,0 +1,102 @@
+<!--pages/send/send.wxml-->
+<import src="../../components/bottom-bar/bottom-bar.wxml"/> 
+<view class="flex"> 
+  <view class="clearfix">
+    <view class="title fl" style="width:60%; text-align: right">发单管理</view>
+    <!-- <text class="fr" style="font-size: 36repx; margin-right: 30rpx; font-weight: 500">⊕</text> -->
+    <image src="../../imgs/add.png" class="fr" style="font-size: 36repx; margin-right: 30rpx; width:48rpx; height:48rpx;" data-page="/pages/new-order/new-order" bindtap="makeNewOrder"></image>
+    <!-- <view class="fr">
+      <image src="../../imgs/add.png"style="height: 50rpx; width: 50rpx;"></image>
+    </view> -->
+  </view>
+  <view class="clearfix">
+    <button class="send-tab-button {{isUnsure}}" bindtap='changeSendType' data-type="unsure">待确认</button>
+    <button class="send-tab-button {{isEnsure}}" bindtap='changeSendType' data-type="ensure">已确认</button>
+  </view>
+  <scroll-view class="send-detail" scroll-y style="width: 100%">
+    <view wx:if="{{isUnsure === 'active'}}">
+      <view class="send-card">
+        <view class="title">远洋山水俱乐部</view>
+        <view class="send-card-desc">KTV娱乐场所内工程-平面规划设计师</view>
+        <view class="send-card-desc clearfix">
+          <view style="float: left; margin-right: 16rpx;">交稿日：2017-10-16</view>
+          <view style="margin-right: 16rpx;float: left">设计稿：3000张</view>
+          <view style="float: left">共计：600000㎡</view>
+        </view>
+        <view class="send-card-price-tips" style="padding:15rpx 0rpx 20rpx 0rpx">
+          <view>
+            <text class="send-card-price">￥20350</text>
+            <text class="send-card-tips">（含违约金￥350）</text>
+          </view>
+          <view style="line-height:25rpx;">
+            <text class="send-card-tips">浏览6000 / 接单60</text>
+          </view>
+        </view>
+        <view class="clearfix">
+          <view class="send-card-button fl">编辑</view>
+          <view class="send-card-button fr">分享</view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{isEnsure === 'active'}}">
+      <view class="send-card">
+        <view class="clearfix">
+          <view class="title fl">远洋山水俱乐部已确认</view>
+          <view class="card-status done fl">已完成</view>
+        </view>
+        <view class="send-card-desc">KTV娱乐场所内工程-平面规划设计师</view>
+        <view class="send-card-desc clearfix">
+          <view style="float: left; margin-right: 16rpx;">交稿日：2017-10-16</view>
+        </view>
+        <view class="send-card-price-tips" style="padding:15rpx 0rpx 20rpx 0rpx">
+          <view>
+            <text class="send-card-price">￥20350</text>
+            <text class="send-card-tips">（系统报价 ￥20000，小费 ￥350）</text>
+          </view>
+        </view>
+        <view class="clearfix">
+          <view class="send-card-button fl">确认</view>
+          <view class="send-card-button fr">取消</view>
+        </view>
+        <view class="designer-info clearfix">
+          <image src="../../imgs/photo.png" class="designer-info-photo fl"></image>
+          <view class="designer-info-desc fl clearfix">
+            <view>Joshin 自由设计师</view>
+            <view class="send-card-tips">接单时间：2017-10-19 19:00</view>
+          </view>
+          <image src="../../imgs/phone.png" class="designer-info-phone fr" bindtap="makeCall"></image>
+        </view>
+      </view>
+
+      <view class="send-card">
+        <view class="clearfix">
+          <view class="title fl">远洋山水俱乐部已确认</view>
+          <view class="card-status continue fl">设计中</view>
+        </view>
+        <view class="send-card-desc">KTV娱乐场所内工程-平面规划设计师</view>
+        <view class="send-card-desc clearfix">
+          <view style="float: left; margin-right: 16rpx;">交稿日：2017-10-16</view>
+        </view>
+        <view class="send-card-price-tips" style="padding:15rpx 0rpx 20rpx 0rpx">
+          <view>
+            <text class="send-card-price">￥20350</text>
+            <text class="send-card-tips">（系统报价 ￥20000，小费 ￥350）</text>
+          </view>
+        </view>
+        <view class="clearfix">
+          <view class="send-card-button fl">确认</view>
+          <view class="send-card-button fr">取消</view>
+        </view>
+        <view class="designer-info clearfix">
+          <image src="../../imgs/photo.png" class="designer-info-photo fl"></image>
+          <view class="designer-info-desc fl clearfix">
+            <view>Joshin 自由设计师</view>
+            <view class="send-card-tips">接单时间：2017-10-19 19:00</view>
+          </view>
+          <image src="../../imgs/phone.png" class="designer-info-phone fr" bindtap="makeCall"></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view >
+  <template is="bottom-bar" data="{{ ...$wux.bottomBar }}"/>
+</view> 

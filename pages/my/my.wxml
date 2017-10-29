@@ -1,5 +1,6 @@
 <import src="../../components/dialog/dialog.wxml"/> 
-<template is="dialog" data="{{ ...$wux.dialog }}"/>  
+<template is="dialog" data="{{ ...$wux.dialog }}"/>
+<import src="../../components/bottom-bar/bottom-bar.wxml"/>   
 <!--index.wxml-->
 <view class="flex"> 
   <view class="title">
@@ -22,12 +23,13 @@
         </view>
       </view>  
   </scroll-view>
-  <view class="bottom-bar">
+  <!-- <view class="bottom-bar">
     <view class="{{item.class}}" wx:for="{{bottomBarTexts}}" wx:key="name"  bindtap='redirectPage' data-page="{{item.class}}">
       <image src="../../imgs/icon_{{item.class}}_normal.png"></image>
       <text> 
         {{item.name}}
       </text>
     </view>
-  </view>
+  </view> -->
+  <template is="bottom-bar" data="{{ ...$wux.bottomBar }}"/>
 </view>

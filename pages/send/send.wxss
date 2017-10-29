@@ -1,0 +1,122 @@
+/* pages/send/send.wxss */
+@import '../../css/core.wxss';
+ .title {
+   font-size: 36rpx; 
+   text-align: center;
+   height: 60rpx;
+ }
+.send-tab-button {
+  width: 50%;
+  float: left;
+  background-color: #fff;
+  border-top: #eee solid 1px;
+  border-bottom: #eee solid 1px;
+  border-radius: 0rpx;
+  font-size: 30rpx;
+  color: #999;
+  font-weight: 300;
+}
+.send-tab-button.active {
+  color: #333;
+}
+button::after {
+  border: none;
+}
+.send-detail {
+  background: #eee;
+  min-height: 1100rpx;
+  padding-bottom: 100rpx;
+}
+.send-card {
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  text-align: left;
+  margin-bottom: 20rpx;
+  line-height:48rpx;
+}
+.send-card .title {
+  font-size: 36rpx;
+  text-align: left;
+}
+
+.send-card .send-card-price-tips {
+  line-height: 48rpx;
+}
+.send-card .send-card-price {
+  font-size: 36rpx;
+  color: #f5535b;
+  font-weight: 300;
+}
+
+.send-card .send-card-desc {
+  font-size:30rpx;
+  color:#999;
+  font-weight: 300;
+}
+
+.send-card .send-card-btn {
+  width: 30%
+}
+
+.send-card .send-card-tips {
+  font-size: 25rpx;
+  color: #aaa;
+  font-weight: 300;
+}
+
+.send-card .send-card-button {
+  color: #999;
+  border: solid 1px #aaa;
+  font-size: 30rpx;
+  font-weight: 300;
+  width: 350rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  padding: 5px 0.5px;
+}
+
+.send-card .designer-info {
+  border-top: #eee solid 1px;
+  padding-top: 20rpx;
+  margin-top: 30rpx;
+}
+
+.send-card .designer-info .designer-info-photo {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+
+.send-card .designer-info .designer-info-desc {
+  width: 400rpx;
+  font-size: 36rpx;
+  padding-left: 20rpx;
+  color: #999;
+  font-weight: 300;
+}
+
+.send-card .designer-info .designer-info-phone {
+  margin-top: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.send-card .card-status {
+  font-size: 24rpx;
+  width: 100rpx;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 5rpx;
+  margin-left: 10rpx;
+}
+
+.send-card .card-status.done {
+  border: 1px solid #f5b73b;
+  color: #f5b73b;
+}
+
+.send-card .card-status.continue {
+  border: 1px solid #91d873;
+  color: #91d873;
+}

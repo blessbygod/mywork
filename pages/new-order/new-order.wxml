@@ -1,0 +1,95 @@
+<import src="../../components/calendar/calendar.wxml"/>
+
+<view class="title">发布订单</view>
+<scroll-view scroll-y class="new-order">
+  <view class="new-order-base-info">
+    <view class="new-order-title">基础信息</view>
+    <view class="new-order-desc clearfix">
+      <text class="fl">建筑名称：</text>
+      <input placeholder='请填写建筑名称' type="text"></input>
+    </view>
+    <view class="new-order-desc clearfix">
+      <picker bindchange="bindPickerChange" value="{{labelIndex}}" range="{{firstLabel.label}}">
+        <view class="picker">
+          <text class="fl">一级分类：</text>
+          <text style='padding-left: 20rpx'>{{firstLabel.label[labelIndex]}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class="new-order-desc clearfix">
+      <picker bindchange="bindPickerChange" value="{{labelIndex}}" range="{{secondLabel.label}}">
+        <view class="picker">
+          <text class="fl">二级分类：</text>
+          <text style='padding-left: 20rpx'>{{secondLabel.label[labelIndex]}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class="new-order-desc clearfix">
+      <text class="fl">总平米数：</text>
+      <input placeholder='请填写总平米数' type="text"></input>
+    </view>
+    <view class="new-order-desc clearfix">
+      <text class="fl">设计张数：</text>
+      <input placeholder='请填写设计张数' type="text"></input>
+    </view>
+    <view class="new-order-desc clearfix">
+      <picker bindchange="bindPickerChange" value="{{labelIndex}}" range="{{designStyles.label}}">
+        <view class="picker">
+          <text class="fl">设计风格：</text>
+          <text style='padding-left: 20rpx'>{{designStyles.label[labelIndex]}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class="new-order-desc">
+      <text>交稿日期：</text>
+      <text style='padding-left: 20rpx' bindtap='changeTime'>{{finishTime}}</text>
+    </view>
+    <view class="new-order-desc clearfix">
+      <picker bindchange="bindPickerChange" value="{{labelIndex}}" range="{{communicate.label}}">
+        <view class="picker">
+          <text class="fl">沟通方式：</text>
+          <text style='padding-left: 20rpx'>{{communicate.label[labelIndex]}}</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="new-order-price-setting" style="margin-top: 20rpx">
+    <view class="new-order-title">价格设置</view>
+    <view class="new-order-desc clearfix">
+      <text class="fl">系统报价：</text>
+      <input placeholder='请填写系统报价' type="text"></input>
+    </view>
+    <view class="new-order-desc clearfix">
+      <text class="fl">添加小费：</text>
+      <input placeholder='请输入价格' type="text"></input>
+    </view>
+    <view class="new-order-desc clearfix">
+      <text class="fl">违约金额：</text>
+      <input placeholder='请填写违约金' type="text"></input>
+    </view>
+  </view>
+  <view class="new-order-price-setting" style="margin-top: 20rpx">
+    <view class="new-order-title">项目资料</view>
+    <scroll-view  scroll-x class="clearfix">
+       <!-- <text>dasdasdasdas</text>
+      <text>dasdasdasdas</text>
+      <text>dasdasdasdas</text>
+      <text>dasdasdasdas</text>  -->
+      <view scroll-x class="new-order-upload-wrap">
+        <view class="new-order-upload">
+          <image src="../../imgs/add.png" class="new-order-upload"></image>
+          <view class="new-order-delete">X</view>
+        </view>
+        <view class="new-order-upload">
+          <image src="../../imgs/add.png" class="new-order-upload"></image>
+          <view class="new-order-delete">X</view>
+        </view>
+        <view class="new-order-upload">
+          <image src="../../imgs/add.png" class="new-order-upload" bindtap='uploadImg'></image>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="new-order-tips">请上传JPG格式图片，大小控制在200K以内</view>
+  </view>
+</scroll-view>
+<template is="calendar" data="{{ ...$wux.calendar.finishTime }}"/>
